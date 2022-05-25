@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<table class="table table-hover">
+    <a href="/view/users/create" class="btn btn-primary px-3 py-1">Add Data</a>
+    <tr class="text-center">
+        <th>Id</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Action</th>
+    </tr>
+        <% for(var i=0; i<usergame.length; i++) {%>
+            <tr class="text-center">
+                <td><%= usergame[i].id %></td>
+                <td><%= usergame[i].username %></td>
+                <td><%= usergame[i].password %></td>
+                <td class="text-center">
+                    <a href="/view/users/update/<%= usergame[i].id %>" class="btn btn-primary px-3 py-1">Edit</a>
+                    <a href="/view/delete/<%= usergame[i].id %>" class="text-danger  px-3 py-1 text-decoration-none">Delete</a>
+                </td>
+            </tr>
+            <% } %>
+  </table>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

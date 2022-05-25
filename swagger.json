@@ -1,0 +1,596 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Daftar API",
+    "version": "1.0.0",
+    "title": "API GAME",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:4000",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "user_game",
+      "description": ""
+    },
+    {
+      "name": "user_game_biodata",
+      "description": ""
+    },
+    {
+      "name": "user_game_history",
+      "description": ""
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": [
+          "user_game"
+        ],
+        "summary": "Add a new user game",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " create user game",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "username":{
+                  "type":"string"
+                },
+                "password":{
+                  "type":"string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Invalid input"
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [
+          "user_game"
+        ],
+        "summary": "get all user game",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid tag value"
+          }
+        },
+        "security": []
+      }
+      },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "user_game"
+        ],
+        "summary": "Get Id User Game",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object"
+            }
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "tags": [
+          "user_game"
+        ],
+        "summary": "Update User Game",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "update data",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "username":{
+                  "type":"string"
+                },
+                "password":{
+                  "type":"string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "tags": [
+          "user_game"
+        ],
+        "summary": "Deletes a user game ",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required":true,
+            "description":"Id user game ",
+            "schema":{
+              "type":"integer"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user id game not found"
+          }
+        },
+        "security": []
+      }
+
+    },
+
+    "/biodata": {
+      "post": {
+        "tags": [
+          "user_game_biodata"
+        ],
+        "summary": "Add a new user game biodata",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " create user game biodata",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "nama":{
+                  "type":"string"
+                },
+                "region":{
+                  "type":"string"
+                },
+                "gender":{
+                  "type":"string"
+                },
+                "userId":{
+                  "type":"integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Invalid input"
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [
+          "user_game_biodata"
+        ],
+        "summary": "get all user game biodata",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid tag value"
+          }
+        },
+        "security": []
+      }
+      },
+    "/biodata/{id}": {
+      "get": {
+        "tags": [
+          "user_game_biodata"
+        ],
+        "summary": "Get Id user game biodata",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type":"object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Biodata user not found"
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "tags": [
+          "user_game_biodata"
+        ],
+        "summary": "Update User Game Biodata",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "update data",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "nama":{
+                  "type":"string"
+                },
+                "region":{
+                  "type":"string"
+                },
+                "gender":{
+                  "type":"string"
+                },
+                "userId":{
+                  "type":"integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "tags": [
+          "user_game_biodata"
+        ],
+        "summary": "Deletes a user game biodata",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required":true,
+            "description":"Id user game biodata",
+            "schema":{
+              "type":"integer"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user id game biodata not found"
+          }
+        },
+        "security": []
+      }
+    },
+
+
+    "/history": {
+      "post": {
+        "tags": [
+          "user_game_history"
+        ],
+        "summary": "Add a new user game history",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": " create user game hidtory",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "diamon":{
+                  "type":"integer"
+                },
+                "tiket":{
+                  "type":"integer"
+                },
+                "battle_point":{
+                  "type":"integer"
+                },
+                "item":{
+                  "type":"integer"
+                },
+                "score":{
+                  "type":"integer"
+                },
+                "login":{
+                  "type":"string"   
+                },
+                "logout":{
+                  "type":"string"
+                },
+                "UserId":{
+                  "type":"integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "404": {
+            "description": "Invalid input"
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "tags": [
+          "user_game_history"
+        ],
+        "summary": "get all user game history",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid tag value"
+          }
+        },
+        "security": []
+      }
+    },
+    "/history/{id}": {
+      "get": {
+        "tags": [
+          "user_game_history"
+        ],
+        "summary": "Get Id user game history",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type":"object"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Biodata user game history not found"
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "tags": [
+          "user_game_history"
+        ],
+        "summary": "Update User Game History",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id that need to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "update data",
+            "required": true,
+            "schema": {
+              "type":"object",
+              "properties":{
+                "diamon":{
+                  "type":"integer"
+                },
+                "tiket":{
+                  "type":"integer"
+                },
+                "battle_point":{
+                  "type":"integer"
+                },
+                "item":{
+                  "type":"integer"
+                },
+                "score":{
+                  "type":"integer"
+                },
+                "login":{
+                  "type":"string"
+                },
+                "logout":{
+                  "type":"string"
+                },
+                "UserId":{
+                  "type":"integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "tags": [
+          "user_game_history"
+        ],
+        "summary": "Deletes a user game history",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required":true,
+            "description":"Id user game history",
+            "schema":{
+              "type":"integer"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "user id game biodata not found"
+          }
+        },
+        "security": []
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "shandy313",
+    "database": "gamech4",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": "root",
+    "database": "gamech4",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": "root",
+    "database": "gamech4_production",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

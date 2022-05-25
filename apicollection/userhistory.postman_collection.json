@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "1f354e00-ed43-4566-90f5-937d773cc498",
+		"name": "userhistory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getId",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/history/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"history",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delet",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "up",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"diamon\": 1,\r\n            \"tiket\": 2,\r\n            \"battle_point\": 10,\r\n            \"item\": 1,\r\n            \"login\": \"2022-04-04\",\r\n            \"logout\": \"2022-04-04\",\r\n            \"userId\": 5\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/history/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"history",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

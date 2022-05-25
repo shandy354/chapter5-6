@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<table class="table table-hover">
+    <a href="/view/biodata/create" class="btn btn-primary px-3 py-1">Add Data</a>
+    <tr class="text-center">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Region</th>
+        <th>User Id</th>
+        <th>Action</th>
+    </tr>
+        <% for(var i=0; i<biodata.length; i++) {%>
+            <tr class="text-center">
+                <td><%= biodata[i].id %></td>
+                <td><%= biodata[i].nama %></td>
+                <td><%= biodata[i].region %></td>
+                <td><%= biodata[i].gender %></td>
+                <td><%= biodata[i].userId %></td>
+                <td class="text-center">
+                    <a href="/view/biodata/update/<%= biodata[i].id %>" class="btn btn-primary px-3 py-1">Edit</a>
+                    <a href="/view/biodata/delete/<%= biodata[i].id %>" class="text-danger  px-3 py-1 text-decoration-none">Delete</a>
+                </td>
+            </tr>
+            <% } %>
+  </table>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
