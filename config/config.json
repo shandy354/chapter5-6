@@ -14,10 +14,18 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "gamech4_production",
-    "host": "localhost",
-    "dialect": "postgres"
+    "url":"postgres://pugnqblilhfhgz:5057ee15ecc1d9bd528122660d11f20b3b9157de8e9a762efe5eb2986f6cf576@ec2-44-195-169-163.compute-1.amazonaws.com:5432/dffe3u2ud29gch",
+    "username": "pugnqblilhfhgz",
+    "password": "5057ee15ecc1d9bd528122660d11f20b3b9157de8e9a762efe5eb2986f6cf576",
+    "database": "dffe3u2ud29gch",
+    "host": "ec2-44-195-169-163.compute-1.amazonaws.com",
+    "port":"5432",
+    "dialect": "postgres",
+    "dialectOptions":{
+      "ssl":{
+        "require":true,
+        "rejectUnauthorized":false
+      }
   }
-}
+  }
+  }
