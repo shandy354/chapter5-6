@@ -54,11 +54,11 @@ module.exports = {
       const token = await jwt.sign({ username }, "13wertryty45t4rfy", {
         expiresIn: "100000",
       });
-      //res.redirect("/view/users");
-      res.render("home");
-      //   res.json({
-      //     token
-      // })
+      // res.render("home");
+        res.json({
+          user: userGame,
+          token
+      })
     } catch (error) {
       // res.status(500).json({
       //     message: error.message
@@ -67,4 +67,4 @@ module.exports = {
     }
   },
 };
-// res.send('user login')
+
